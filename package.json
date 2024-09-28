@@ -1,6 +1,6 @@
 {
   "name": "nasco",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,23 +9,31 @@
     "bundle": "tsup src/index.ts"
   },
   "dependencies": {
-    "next": "14.2.4",
+    "next": "^14.2.13",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@radix-ui/react-icons": "^1.3.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "clsx": "^2.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.1",
     "tsup": "^8.1.0",
     "typescript": "^5"
   },
   "author": "ClemensHuck",
   "license": "MIT",
-  "keywords": ["nextjs", "next", "typescript", "tailwindcss"],
+  "keywords": [
+    "nextjs",
+    "next",
+    "typescript",
+    "tailwindcss"
+  ],
   "main": "dist/index.js"
 }

@@ -1,8 +1,11 @@
 /node_modules
 /src
 /public
-
+.next 
 .env
+
+.eslintrc.json
+.gitignore
 
 tailwind.config.ts
 tsconfig.json
