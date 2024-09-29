@@ -1,6 +1,6 @@
 {
   "name": "nasco",
-  "version": "0.9.5",
+  "version": "0.9.61",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

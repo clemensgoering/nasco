@@ -10,7 +10,7 @@ export type CSSBtnConfig = {
     selected: Boolean;
 };
 
-const ShowCode = ({ descriptionNode, code, language }: { descriptionNode: ReactNode, code: string, language: BundledLanguage }) => {
+const ShowCode = ({ className, descriptionNode, code, language }: { className?: string, descriptionNode: ReactNode, code: string, language: BundledLanguage }) => {
 
     const [descConf, setDescription] = useState({ visibility: "block", selected: true, style: 'text-blue-600 rounded-ss-lg dark:text-blue-500' });
     const [codeConf, setCode] = useState({ visibility: "hidden", selected: false, style: 'dark:hover:text-gray-300' });
@@ -72,7 +72,7 @@ const ShowCode = ({ descriptionNode, code, language }: { descriptionNode: ReactN
         <>
 
 
-            <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className={cn("w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700", className)}>
                 <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
                     <li className="flex-none">
                         <button onClick={() => toggleBlock("default")} id="defaultBtn" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected={descConf.selected} className={cn("inline-block p-4 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700", descConf.style)}>Description</button>

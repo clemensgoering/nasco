@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 import WhiteStars from "./WhiteStar";
 import YellowStars from "./YellowStar";
 
-const UserRating = ({ rating, children }: { rating: Rating, children?: ReactNode }) => {
+const UserRating = ({ className, rating, children }: { className?: string, rating: Rating, children?: ReactNode }) => {
 
     const getYellowStars = (stars: number) => {
         let count = 0;
@@ -27,7 +27,7 @@ const UserRating = ({ rating, children }: { rating: Rating, children?: ReactNode
 
     return (
         <>
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full">
+            <div className={cn("animate_top group relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full", className)}>
                 <article>
                     <div className="flex items-center mb-4">
                         <div className="font-medium dark:text-white">

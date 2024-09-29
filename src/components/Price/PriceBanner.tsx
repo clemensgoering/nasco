@@ -1,11 +1,12 @@
+import { cn } from "@/lib/utils";
 import { Pricing } from "@/types/pricing";
 import { ReactNode } from "react";
 
-const PriceBanner = ({ conf, children }: { conf: Pricing, children?: ReactNode }) => {
+const PriceBanner = ({className, conf, children }: { className?: string, conf: Pricing, children?: ReactNode }) => {
     return (
         <>
             {/* <!-- ===== Pricing Table Start ===== --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full">
+            <div className={cn("animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full", className)}>
                 <div className={`absolute px-4.5 py-1.5 right-0 shadow-md
           ${conf.status === "new" ? "top-4" : ""} ${conf.status === "popular" ? "top-7.5" : ""} ${conf.status === "sale" ? "top-4" : ""}
           -rotate-90 rounded-bl-full rounded-tl-full ${conf.status === "new" ? "bg-lime-500" : ""} ${conf.status === "popular" ? "bg-primary" : ""} ${conf.status === "sale" ? "bg-red-500" : ""}  text-metatitle font-medium uppercase text-white`}>

@@ -1,12 +1,13 @@
 import ImagePlaceholder from "@/components/Placeholder/Image";
+import { cn } from "@/lib/utils";
 import { PriceStatus, Pricing } from "@/types/pricing";
 import { ReactNode } from "react";
 
-const PriceCard = ({ status, children }: { status?: PriceStatus, children?: ReactNode }) => {
+const PriceCard = ({ className, status, children }: { className?: string, status?: PriceStatus, children?: ReactNode }) => {
   return (
     <>
       {/* <!-- ===== Pricing Card Start ===== --> */}
-      <div className="animate_top group relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full">
+      <div className={cn("animate_top group relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full", className)}>
         <div className={`absolute px-4.5 py-1.5 right-0 shadow-md
           ${status === "new" ? "top-4" : ""} ${status === "popular" ? "top-7.5" : ""} ${status === "sale" ? "top-4" : ""}
           -rotate-90 rounded-bl-full rounded-tl-full ${status === "new" ? "bg-lime-500" : ""} ${status === "popular" ? "bg-primary" : ""} ${status === "sale" ? "bg-red-500" : ""}  text-metatitle font-medium uppercase text-white`}>
@@ -26,10 +27,10 @@ const PriceCard = ({ status, children }: { status?: PriceStatus, children?: Reac
   );
 };
 
-const PriceCardContent = ({ conf, children }: { conf: Pricing, children?: ReactNode }) => {
+const PriceCardContent = ({ className, conf, children }: { className?: string, conf: Pricing, children?: ReactNode }) => {
   return (
       <>
-          <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
+          <h4 className={cn("mb-2.5 text-para2 font-medium text-black dark:text-white",className)}>
               {conf.title}
           </h4>
           <p>{conf.description}</p>
@@ -58,10 +59,10 @@ const PriceCardContent = ({ conf, children }: { conf: Pricing, children?: ReactN
 };
 
 
-const PriceCardHeader = ({ children }: { children?: ReactNode }) => {
+const PriceCardHeader = ({ className, children }: { className?: string, children?: ReactNode }) => {
   return (
 
-        <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+        <h3 className={cn("mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3", className)}>
           { children === undefined ? <ImagePlaceholder className="h-52 w-full mx-auto"/> : children }
         </h3>
   );

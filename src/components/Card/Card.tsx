@@ -1,8 +1,9 @@
 import { ReactNode, useState } from "react";
 import { CardConfig } from "@/types/card";
 import { DotsVerticalIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
 
-const Card = ({ config, children }: { config?: CardConfig, children?: ReactNode }) => {
+const Card = ({ className, config, children }: { className?: string, config?: CardConfig, children?: ReactNode }) => {
 
 
   const [menustatus, setMenu] = useState("hidden");
@@ -33,7 +34,7 @@ const Card = ({ config, children }: { config?: CardConfig, children?: ReactNode 
   return (
     <>
       {/* <!-- =====  Card Start ===== --> */}
-      <div className={getVariant(config?.variant)}>
+      <div className={cn(getVariant(config?.variant),className)}>
         <div className="flex-1 w-full">
           {config?.title !== undefined ? (
             <h3 className="relative mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
