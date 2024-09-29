@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Pricing from "./test/pricing";
 import Sections from "./test/section";
 import Rating from "./test/rating";
+import Card from "./test/card";
+import Code from "./test/showcode";
 
 export const metadata: Metadata = {
     title: "Home - Nasco",
@@ -17,6 +19,8 @@ export default function Home() {
                     <Sections/>
                     <Pricing/>
                     <Rating/>
+                    <Card/>
+                    <Code/>
                 </div>
             </section>
         </main>

@@ -4,9 +4,12 @@ export type Pricing = {
     title?: String;
     description?: String;
     items: String[];
-    status?: "new" | "popular" | "sale";
     priceButton?: PriceButton;
+    status?: PriceStatus;
   };
+
+  export type PriceStatus = "new" | "popular" | "sale";
+  
 
   export type PriceButton = {
     link?: string;

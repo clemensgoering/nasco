@@ -2,7 +2,10 @@
 import Image from "next/image";
 import pricingData from "./pricingData";
 import PriceBanner from "@/components/Price/PriceBanner";
-import PriceCard from "@/components/Price/PriceCard";
+import PriceCard from "@/components/Price/PriceCard/PriceCard";
+import PriceCardHeader from "@/components/Price/PriceCard/PriceCardHeader";
+import PriceCardContent from "@/components/Price/PriceCard/PriceCardContent";
+import ImagePlaceholder from "@/components/Placeholder/Image";
 
 const Pricing = () => {
   return (
@@ -25,7 +28,10 @@ const Pricing = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap ">
             {pricingData.map((conf, key) => (
-              <PriceCard key={key} conf={conf}>Testprice</PriceCard>
+              <PriceCard key={key} status={conf?.status}>
+                <PriceCardHeader><ImagePlaceholder/></PriceCardHeader>
+                <PriceCardContent conf={conf}>asdasdasd</PriceCardContent>
+              </PriceCard>
             ))}
           </div>
         </div>

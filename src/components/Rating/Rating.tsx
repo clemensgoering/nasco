@@ -10,7 +10,7 @@ const UserRating = ({ rating, children }: { rating: Rating, children?: ReactNode
         let count = 0;
         let yStars = [];
         while (count < stars) {
-            yStars.push(<YellowStars/>);
+            yStars.push(<YellowStars key={count}/>);
             count++;
         }
         return yStars;
@@ -20,7 +20,7 @@ const UserRating = ({ rating, children }: { rating: Rating, children?: ReactNode
         let count = 5 - stars;
         let wStars = [];
         for (let i = 0; i < count; i++) {
-            wStars.push(<WhiteStars/>);
+            wStars.push(<WhiteStars key={count}/>);
         }
         return wStars;
     }

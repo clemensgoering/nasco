@@ -2,13 +2,14 @@ import Image from "next/image";
 import ImagePlaceholder from "../Placeholder/Image";
 import { SectionConfig } from "@/types/section";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-const LTR = ({ config, children }: { config: SectionConfig, children: ReactNode }) => {
+const LTR = ({ className, config, children }: { className?: string, config: SectionConfig, children?: ReactNode }) => {
 
     return (
         <>
             {/* <!-- ===== RTL Start ===== --> */}
-            <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+            <div className={cn("relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0",className)}>
                 <div className="absolute bottom-10 -z-1 mx-auto h-[80%] w-[70%]">
                     {config.showBackgroundImage ? (
                         <>
