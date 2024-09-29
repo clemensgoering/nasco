@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { DownloadIcon } from "@radix-ui/react-icons";
+import { CodeIcon, DownloadIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import { ReactNode, useEffect, useState } from "react";
 import { BundledLanguage, codeToHtml } from "shiki";
 
@@ -12,8 +12,11 @@ export type CSSBtnConfig = {
 
 const ShowCode = ({ className, descriptionNode, code, language }: { className?: string, descriptionNode: ReactNode, code: string, language: BundledLanguage }) => {
 
-    const [descConf, setDescription] = useState({ visibility: "block", selected: true, style: 'text-blue-600 rounded-ss-lg dark:text-blue-500' });
-    const [codeConf, setCode] = useState({ visibility: "hidden", selected: false, style: 'dark:hover:text-gray-300' });
+    const cssActive = "font-bold text-blacksection dark:text-white";
+    const cssInactive = "dark:hover:text-gray-300";
+
+    const [descConf, setDescription] = useState({ visibility: "block", selected: true, style: cssActive });
+    const [codeConf, setCode] = useState({ visibility: "hidden", selected: false, style: cssInactive });
     const [copy, setCopyCommand] = useState("");
     const [transformedCode, setTransformedCode] = useState("");
 
@@ -40,12 +43,12 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
     const toggleBlock = (block: String) => {
         switch (block) {
             case "default":
-                setDescription({ visibility: "block", selected: true, style: 'text-blue-600 rounded-ss-lg dark:text-blue-500' });
-                setCode({ visibility: "hidden", selected: false, style: 'dark:hover:text-gray-300' });
+                setDescription({ visibility: "block", selected: true, style: cssActive });
+                setCode({ visibility: "hidden", selected: false, style: cssInactive });
                 break;
             case "code":
-                setDescription({ visibility: "hidden", selected: false, style: 'dark:hover:text-gray-300' });
-                setCode({ visibility: "block", selected: true, style: 'text-blue-600 rounded-ss-lg dark:text-blue-500' });
+                setDescription({ visibility: "hidden", selected: false, style: cssInactive });
+                setCode({ visibility: "block", selected: true, style: cssActive });
                 break;
         }
     }
@@ -72,13 +75,17 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
         <>
 
 
-            <div className={cn("w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700", className)}>
-                <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-                    <li className="flex-none">
-                        <button onClick={() => toggleBlock("default")} id="defaultBtn" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected={descConf.selected} className={cn("inline-block p-4 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700", descConf.style)}>Description</button>
+            <div className={cn("w-full bg-white border rounded-lg border-gray-200 shadow dark:bg-blacksection dark:border-gray-600", className)}>
+                <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-tr-lg rounded-tl-lg dark:bg-blacksection dark:border-gray-700 dark:text-gray-400 bg-gray-50" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+                    <li className="flex-1">
                     </li>
                     <li className="flex-none">
-                        <button onClick={() => toggleBlock("code")} id="codeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected={codeConf.selected} className={cn("inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700", codeConf.style)}>Show Code</button>
+                        <button onClick={() => toggleBlock("default")} id="defaultBtn" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected={descConf.selected} className={cn("flex  p-4 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700", descConf.style)}>
+                            <InfoCircledIcon className="flex w-4.5 h-4.5 mr-2"/>Description</button>
+                    </li>
+                    <li className="flex-none">
+                        <button onClick={() => toggleBlock("code")} id="codeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected={codeConf.selected} className={cn("flex  p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700", codeConf.style)}>
+                            Show Code <CodeIcon className="flex w-4.5 h-4.5 ml-2"/></button>
                     </li>
                     <li className="flex-1">
                     </li>
@@ -86,8 +93,8 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
                         <div className="inline-block p-4">{copy}</div>
                     </li>
                     <li className="flex-none">
-                        <button onClick={() => copyCode()} id="copyCodeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" className="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <DownloadIcon className="w-4 h-4" />
+                        <button onClick={() => copyCode()} id="copyCodeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" className="flex p-4 hover:text-gray-600 hover:bg-gray-100 rounded-tr-md rounded-br-md dark:hover:bg-gray-700">
+                            <DownloadIcon className="w-4.5 h-5 " />
                         </button>
                     </li>
                 </ul>
