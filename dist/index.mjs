@@ -70,7 +70,7 @@ import Image from "next/image";
 import Image2 from "next/image";
 
 // src/components/ShowCode/ShowCode.tsx
-import { DownloadIcon } from "@radix-ui/react-icons";
+import { CodeIcon, DownloadIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import { useEffect, useState as useState2 } from "react";
 import { codeToHtml } from "shiki";
 export {
