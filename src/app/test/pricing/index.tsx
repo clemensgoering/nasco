@@ -2,9 +2,7 @@
 import Image from "next/image";
 import pricingData from "./pricingData";
 import PriceBanner from "@/components/Price/PriceBanner";
-import PriceCard from "@/components/Price/PriceCard/PriceCard";
-import PriceCardHeader from "@/components/Price/PriceCard/PriceCardHeader";
-import PriceCardContent from "@/components/Price/PriceCard/PriceCardContent";
+import { PriceCard, PriceCardContent, PriceCardHeader } from "@/components/Price/PriceCard/PriceCard";
 import ImagePlaceholder from "@/components/Placeholder/Image";
 
 const Pricing = () => {
