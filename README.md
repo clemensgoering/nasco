@@ -17,7 +17,8 @@ npm i nasco
 ```
 
 > [!NOTE]
-> This Library is still under construction and will be extended in the future.
+> This Library is still under construction. Images and Styles are currently redesigned.
+> Components can be used with Version 1.0.0
 
 ## Supported Functionalities
 - Merge and clsx integration for extended customizations of each main component
