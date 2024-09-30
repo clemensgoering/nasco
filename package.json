@@ -1,6 +1,6 @@
 {
   "name": "nasco",
-  "version": "0.9.74",
+  "version": "0.9.76",
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -50,8 +50,5 @@
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-      "dist"
-  ]
+  "types": "./dist/index.d.ts"
 }
