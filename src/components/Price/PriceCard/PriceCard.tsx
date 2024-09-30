@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import ImagePlaceholder from "@/components/Placeholder/Image";
 import { cn } from "@/lib/utils";
