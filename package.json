@@ -1,6 +1,6 @@
 {
   "name": "nasco",
-  "version": "0.9.76",
+  "version": "0.9.77",
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -48,7 +48,5 @@
     "tailwindcss",
     "skiki"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts"
+  "main": "./dist/index.js"
 }
