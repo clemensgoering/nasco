@@ -70,4 +70,4 @@ const PriceCardHeader = ({ className, children }: { className?: string, children
 
 export { PriceCard,
          PriceCardContent,
-         PriceCardHeader, }
+         PriceCardHeader }

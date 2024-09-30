@@ -1,6 +1,6 @@
 {
   "name": "nasco",
-  "version": "0.9.65",
+  "version": "0.9.66",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,6 +14,10 @@
     "react": "^18",
     "react-dom": "^18",
     "shiki": "^1.21.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18"
   },
   "devDependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -29,7 +33,11 @@
     "tsup": "^8.1.0",
     "typescript": "^5"
   },
-  "author": "ClemensHuck",
+  "author": {
+    "name" : "Clemens Huck",
+    "email": "mail@c-huck.com",
+    "github": "https://github.com/clemensgoering/nasco"
+  },
   "license": "MIT",
   "keywords": [
     "nextjs",

@@ -1,12 +1,25 @@
-export * from "./components/Card/Card";
-export * from "./components/Placeholder/Image";
+import Card from "./components/Card/Card";
+import Image from "./components/Placeholder/Image";
 
-export * from "./components/Price/PriceCard/PriceCard";
-export * from "./components/Price/PriceBanner";
+import { PriceCard,
+         PriceCardContent,
+         PriceCardHeader } from "./components/Price/PriceCard/PriceCard";
+import PriceBanner from "./components/Price/PriceBanner";
 
+import Rating from "./components/Rating/Rating";
+import RTL from "./components/Section/RTL";
+import LTR from "./components/Section/LTR";
+import ShowCode from "./components/ShowCode/ShowCode";
 
-export * from "./components/Price/PriceBanner";
-export * from "./components/Rating/Rating";
-export * from "./components/Section/RTL";
-export * from "./components/Section/LTR";
-export * from "./components/ShowCode/ShowCode";
+export { 
+    Card,
+    Image,
+    PriceCard,
+    PriceCardContent,
+    PriceCardHeader,
+    PriceBanner,
+    Rating,
+    RTL,
+    LTR,
+    ShowCode
+ }
