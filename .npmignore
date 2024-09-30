@@ -1,0 +1,15 @@
+/node_modules
+/src
+/docs
+/public
+/.next 
+.env
+
+.eslintrc.json
+.gitignore
+
+tailwind.config.ts
+tsconfig.json
+tsup.config.ts
+*.tsbuildinfo
+next-env.d.ts
