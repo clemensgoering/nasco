@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactNode, useState } from "react";
 import { CardConfig } from "@/types/card";
 import { DotsVerticalIcon } from "@radix-ui/react-icons";

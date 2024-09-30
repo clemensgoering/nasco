@@ -1,3 +1,4 @@
+import React from 'react';
 import ImagePlaceholder from "@/components/Placeholder/Image";
 import { cn } from "@/lib/utils";
 import { PriceStatus, Pricing } from "@/types/pricing";
