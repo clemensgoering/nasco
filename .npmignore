@@ -2,7 +2,7 @@
 /src
 /docs
 /public
-.next 
+/.next 
 .env
 
 .eslintrc.json
@@ -11,3 +11,5 @@
 tailwind.config.ts
 tsconfig.json
 tsup.config.ts
+*.tsbuildinfo
+next-env.d.ts
