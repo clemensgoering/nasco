@@ -145,6 +145,4 @@ const Header = ({ config, children }: { config: MenuConfig, children?: ReactNode
   );
 };
 
-// w-full delay-300
-
 export default Header;
