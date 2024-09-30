@@ -1,3 +1,7 @@
+import Button from "./components/Button";
+import Header from "./components/Header";
+import { HeroImage, 
+         HeroSimple } from "./components/Hero";
 import Card from "./components/Card/Card";
 import Image from "./components/Placeholder/Image";
 
@@ -12,6 +16,10 @@ import LTR from "./components/Section/LTR";
 import ShowCode from "./components/ShowCode/ShowCode";
 
 export { 
+    Button,
+    Header,
+    HeroImage, 
+    HeroSimple,
     Card,
     Image,
     PriceCard,

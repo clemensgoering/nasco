@@ -4,11 +4,10 @@
 (N)extJS B(as)ic (Co)mponent Library
 
 ## Description
-This npm package has been a result of working with vaious topics, tools and languages. While being in the need of reusing NextJS components
-for various purposes, simplification and getting rid of redundant steps became more and more of interest. While using other packages all day long,
-this has been the result of bundling the most common elements and state-handle functionalities.
-
-Intention: Extend the list of components to reduce the time-to-success rate, even without using AI support (nowadays).
+Simplified and easy to use NextJS Components, that can be integrated into your projects.
+Reduced functionality scope to support the most common user interactions. Following common UX pattern
+to create a professional appearance without spending to much effort. Mockup as well as complex solutions
+can be enriched by the provided elements.
 
 
 ![NPM Downloads](https://img.shields.io/npm/dw/:nasco)
@@ -25,6 +24,19 @@ npm i nasco
 - Theming support with default "dark:css" and "light:css" preparations
 
 ## Components
+
+### Header
+Clean and simple header element. Supporting mobile device size adjustments as well as customizable link attributes.
+Additional space for custom child-elements. For example, the internal **Button** component can be used with pre-configured styles and size
+to personalize the overall UX.
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/header_20240930.png)
+
+### Hero
+The current package provides two different Hero versions.
+**Simple (HeroSimple)** - minimalistic text/centered design with single button
+**Image (HeroImage)** - Separated text and image areas
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/hero_20240930.png)
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/hero_2_20240930.png)
 
 ### RTL (Right to left, Image and content)
 ![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/rtl_20240929.png)
