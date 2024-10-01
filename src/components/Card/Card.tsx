@@ -55,7 +55,7 @@ const Card = ({ className, config, children }: { className?: string, config?: Ca
               <ul className="py-2" aria-labelledby="dropdownButton">
                 <li>
                   {config?.menuItems?.map((node, key) => (
-                    node
+                    <div key={key}>{node}</div>
                   ))}
                 </li>
               </ul>

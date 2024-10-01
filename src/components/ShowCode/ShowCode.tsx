@@ -9,7 +9,7 @@ export type CSSBtnConfig = {
     selected: Boolean;
 };
 
-const ShowCode = ({ className, descriptionNode, code, language }: { className?: string, descriptionNode: ReactNode, code: string, language: BundledLanguage }) => {
+const ShowCode = ({ className, descriptionNode, code, language }: { className?: string, descriptionNode?: ReactNode, code: string, language: BundledLanguage }) => {
 
     const cssActive = "font-bold text-blacksection dark:text-white";
     const cssInactive = "dark:hover:text-gray-300";
@@ -17,27 +17,31 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
     const [descConf, setDescription] = useState({ visibility: "block", selected: true, style: cssActive });
     const [codeConf, setCode] = useState({ visibility: "hidden", selected: false, style: cssInactive });
     const [copy, setCopyCommand] = useState("");
-    const [transformedCode, setTransformedCode] = useState("");
+    const [transformedCode, setTransformedCode] = useState('');
 
+    
     useEffect(() => {
         const fetchData = async () => {
-            const html = await codeToHtml(code, {
+
+            const data = await codeToHtml(code, {
                 lang: language,
-                themes: { 
+                themes: {
                     light: 'min-light',
                     dark: 'min-dark',
-                  },
-                  colorReplacements: {
-                      '#ffffff': '#f1f5f9',
-                      '#000000': '#262626'
-                  }
-              });
+                },
+                colorReplacements: {
+                    '#ffffff': '#f1f5f9',
+                    '#000000': '#262626'
+                }
+            });
             
-              setTransformedCode(html);
+            setTransformedCode(data);
+                
         };
-    
-        fetchData();
-      }, [code]);
+        console.log(code);
+        fetchData().catch((error) => {console.log(error);});
+        
+    }, []);
 
     const toggleBlock = (block: String) => {
         switch (block) {
@@ -80,11 +84,11 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
                     </li>
                     <li className="flex-none">
                         <button onClick={() => toggleBlock("default")} id="defaultBtn" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected={descConf.selected} className={cn("flex  p-4 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700", descConf.style)}>
-                            <InfoCircledIcon className="flex w-4.5 h-4.5 mr-2"/>Description</button>
+                            <InfoCircledIcon className="flex w-4.5 h-4.5 mr-2" />Description</button>
                     </li>
                     <li className="flex-none">
                         <button onClick={() => toggleBlock("code")} id="codeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected={codeConf.selected} className={cn("flex  p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700", codeConf.style)}>
-                            Show Code <CodeIcon className="flex w-4.5 h-4.5 ml-2"/></button>
+                            Show Code <CodeIcon className="flex w-4.5 h-4.5 ml-2" /></button>
                     </li>
                     <li className="flex-1">
                     </li>
@@ -104,7 +108,7 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
                     </div>
                     <div className={`${codeConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800`} id="services" role="tabpanel" aria-labelledby="services-tab">
                         <div className="flex relative rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-blacksection dark:text-gray-200 w-full">
-                        <div dangerouslySetInnerHTML={{ __html: transformedCode }}></div>
+                            <div dangerouslySetInnerHTML={{ __html: transformedCode }}></div>
                         </div>
                     </div>
                 </div>

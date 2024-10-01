@@ -4,6 +4,9 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { clsx } from "clsx";
 
+import moon from '@/images/icon/icon-moon.svg';
+import sun from '@/images/icon/icon-sun.svg';
+
 const ThemeToggler = ({className} : {className?:String}) => {
   const { theme, setTheme } = useTheme();
 
@@ -14,7 +17,7 @@ const ThemeToggler = ({className} : {className?:String}) => {
       className={clsx("bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static",className)}
     >
       <Image
-        src="/images/icon/icon-moon.svg"
+        src={moon}
         alt="logo"
         width={21}
         height={21}
@@ -22,7 +25,7 @@ const ThemeToggler = ({className} : {className?:String}) => {
       />
 
       <Image
-        src="/images/icon/icon-sun.svg"
+        src={sun}
         alt="logo"
         width={22}
         height={22}

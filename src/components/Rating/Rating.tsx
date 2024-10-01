@@ -21,7 +21,7 @@ const UserRating = ({ className, rating, children }: { className?: string, ratin
         let count = 5 - stars;
         let wStars = [];
         for (let i = 0; i < count; i++) {
-            wStars.push(<WhiteStars key={count}/>);
+            wStars.push(<WhiteStars key={i}/>);
         }
         return wStars;
     }

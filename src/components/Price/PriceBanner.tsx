@@ -31,7 +31,7 @@ const PriceBanner = ({className, conf, children }: { className?: string, conf: P
                 <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                     <ul>
                         {conf.items.map((item, key) => (
-                            <li className="mb-4 text-black last:mb-0 dark:text-manatee">
+                            <li key={key} className="mb-4 text-black last:mb-0 dark:text-manatee">
                                 {item}
                             </li>
                         ))}
