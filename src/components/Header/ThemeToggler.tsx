@@ -1,8 +1,7 @@
-"use client"
 import React from 'react';
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { clsx } from "clsx";
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 const ThemeToggler = ({className} : {className?:String}) => {
   const { theme, setTheme } = useTheme();
@@ -13,21 +12,8 @@ const ThemeToggler = ({className} : {className?:String}) => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={clsx("bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static",className)}
     >
-      <Image
-        src="/images/icon/icon-moon.svg"
-        alt="logo"
-        width={21}
-        height={21}
-        className="dark:hidden"
-      />
-
-      <Image
-        src="/images/icon/icon-sun.svg"
-        alt="logo"
-        width={22}
-        height={22}
-        className="hidden dark:block"
-      />
+      <MoonIcon className="dark:hidden"/>
+      <SunIcon className="hidden dark:block"/>
     </button>
   );
 };

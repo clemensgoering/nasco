@@ -2,11 +2,6 @@
 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
@@ -136,11 +131,7 @@ module.exports = {
           "50%": { transform: "translateY(0)" },
         },
       },
-      animation: {
-        line1: "line 3s linear infinite",
-        line2: "line 6s linear infinite",
-        line3: "line 9s linear infinite",
-      },
+      animation: {},
     },
   },
   plugins: [],

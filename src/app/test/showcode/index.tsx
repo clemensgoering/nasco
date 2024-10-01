@@ -1,4 +1,5 @@
 import ShowCode from "@/components/ShowCode/ShowCode";
+import React from "react";
 export default function Code() {
 
     const desciption = (

@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import { ImageIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";

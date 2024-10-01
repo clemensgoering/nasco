@@ -1,13 +1,12 @@
 {
   "name": "nasco",
-  "version": "0.9.89",
-  "type": "module",
+  "version": "0.9.903",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "bundle": "tsup src/index.ts"
+    "rollup": "tsc && rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -15,25 +14,33 @@
     "highlight.js": "^11.10.0",
     "next": "^14.2.13",
     "next-themes": "^0.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-redux": "^5.0.0-alpha.9",
     "tailwind-merge": "^2.5.2"
   },
   "peerDependencies": {
-    "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.0",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "tsup": "^8.1.0",
-    "typescript": "^5"
+    "postcss": "^8.4.47",
+    "rollup": "^4.23.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-tsconfig-paths": "^1.5.2",
+    "rollup-plugin-typescript-paths": "^1.5.0",
+    "tailwindcss": "^3.4.13",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.2"
   },
   "author": {
     "name": "Clemens Huck",
@@ -45,10 +52,12 @@
     "nextjs",
     "next",
     "typescript",
-    "tailwindcss",
-    "skiki"
+    "tailwindcss"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
 }

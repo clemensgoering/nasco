@@ -1,4 +1,5 @@
 import { CardConfig } from "@/types/card";
+import React from "react";
 
 const pricingData: CardConfig[] = [
   {

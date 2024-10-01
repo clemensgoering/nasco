@@ -1,7 +1,6 @@
-"use client";
-import Image from "next/image";
 import cardData from "./cardData";
 import Card from "@/components/Card/Card";
+import React from "react";
 
 const Cards = () => {
   return (

@@ -1,7 +1,6 @@
-"use client";
 import UserRating from "@/components/Rating/Rating";
-import Image from "next/image";
 import ratingData from "./ratingData";
+import React from "react";
 
 const Rating = () => {
     return (

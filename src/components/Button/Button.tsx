@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
@@ -58,11 +56,7 @@ const Button = ({ className, config, children }: { className?: String, config?: 
     }
 
 
-    return (
-        <>
-            <button className={cn(btnCSS, getStyle(config?.style), getSize(config?.size), className)}>{children}</button>
-        </>
-    );
+    return <button className={cn(btnCSS, getStyle(config?.style), getSize(config?.size), className)}>{children}</button>;
 };
 
 export default Button;

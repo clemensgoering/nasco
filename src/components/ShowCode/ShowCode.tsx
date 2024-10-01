@@ -3,6 +3,7 @@
 import codetransform from "@/lib/codetransform";
 import { cn } from "@/lib/utils";
 import { CodeIcon, DownloadIcon, InfoCircledIcon } from "@radix-ui/react-icons";
+import React from "react";
 import { ReactNode, useEffect, useState } from "react";
 
 export type CSSBtnConfig = {
@@ -87,7 +88,7 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
                         {descriptionNode}
                     </div>
                     <div className={`${codeConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800`} id="services" role="tabpanel" aria-labelledby="services-tab">
-                        <div className="flex w-full relative overflow-scroll rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-blacksection dark:text-gray-200 w-full">
+                        <div className="flex w-full relative overflow-scroll rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-slate-200 dark:text-gray-200">
                             { transformed !== "" ? (<><div dangerouslySetInnerHTML={{ __html: transformed }} /></>) : "" }
                         </div>
                     </div>

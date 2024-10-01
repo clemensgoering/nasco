@@ -1,7 +1,6 @@
-"use client";
-
 import { HeroImage, HeroSimple } from "@/components/Hero/Hero";
 import ImagePlaceholder from "@/components/Placeholder/Image";
+import React from "react";
 
 const HeroSection = () => {
   return (

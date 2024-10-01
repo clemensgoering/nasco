@@ -1,9 +1,8 @@
-"use client";
-
 import { GitHubLogoIcon, HomeIcon } from "@radix-ui/react-icons";
 import menuData from "../menuData";
 import Header from "@/components/Header/Header";
 import Button from "@/components/Button/Button";
+import React from "react";
 
 const HeaderElement = () => {
   return (

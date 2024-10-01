@@ -1,3 +1,4 @@
+import React from "react";
 import { Metadata } from "next";
 import Pricing from "./test/pricing";
 import Sections from "./test/section";

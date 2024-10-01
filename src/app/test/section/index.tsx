@@ -1,5 +1,6 @@
 import LTR from "@/components/Section/LTR";
 import RTL from "@/components/Section/RTL";
+import React from "react";
 export default function Sections() {
     return (
         <>

@@ -1,11 +1,12 @@
 "use client"
+
 import React from 'react';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 
 import ThemeToggler from "./ThemeToggler";
-import { MenuConfig } from "@/types/menu";
+import { MenuConfig } from '@/types/menu';
 
 
 const Header = ({ config, children }: { config: MenuConfig, children?: ReactNode }) => {

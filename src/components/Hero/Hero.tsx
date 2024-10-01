@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { HeroConfig } from "@/types/hero";
@@ -9,7 +8,7 @@ const HeroSimple = ({ className, config, children }: { className?: string, confi
 
   return (
     <>
-      <section className={cn("bg-white h-screen dark:bg-gray-900 bg-[url('/images/shape/shape-dotted-light.svg')] dark:bg-[url('/images/shape/shape-dotted-dark.svg')]", className)}>
+      <section className={cn("h-screen bg-transparent", className)}>
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
           {config?.jumbotron !== undefined ? (
             <a href={config.jumbotron.link} className="mt-[15%] p-2 px-6 inline-flex justify-between items-center mb-7 text-sm text-blue-700 bg-slate-100 rounded-full dark:bg-blacksection dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">

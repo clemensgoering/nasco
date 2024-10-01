@@ -1,6 +1,7 @@
+import React from "react";
 
 import { Inter } from "next/font/google";
-import "@/app/globals.css"
+import "@/styles/main.css"
 import { ThemeProvider } from "next-themes";
 import HeaderElement from "./test/header";
 
