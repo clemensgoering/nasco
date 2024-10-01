@@ -68,5 +68,5 @@ Simplified Rating Component with crucial properties, as well as a customizable f
 Component with two main sections.
 ![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/showcode_20240929.png)
 1. Customizable component placeholder, used to maintain description, images and other describing or visualizing elements.
-2. Code example. Beautified via <a href="https://shiki.style/" target="_blank">Shiki</a> for an increased use for various languages
+2. Code example. Beautified via **highlight.js** for an increased use for various languages
 

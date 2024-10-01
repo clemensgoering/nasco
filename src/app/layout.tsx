@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
 
   return (
-    <html lang="en">
+    <html  lang="en">
       <body className={`dark:bg-black ${inter.className}`}>
         <ThemeProvider
           enableSystem={false}

@@ -15,7 +15,7 @@ const Pricing = () => {
           <div className="absolute -bottom-15 -z-1 h-full w-full">
             <Image
               fill
-              src="/public/images/icon/icon-moon.svg"
+              src="/images/icon/icon-moon.svg"
               alt="Dotted"
               className="dark:hidden"
             />
