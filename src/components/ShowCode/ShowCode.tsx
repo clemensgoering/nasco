@@ -22,7 +22,7 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
     
     useEffect(() => {
         const fetchData = async () => {
-
+            /** 
             const data = await codeToHtml(code, {
                 lang: language,
                 themes: {
@@ -36,6 +36,7 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
             });
             
             setTransformedCode(data);
+            **/
                 
         };
         console.log(code);

@@ -4,8 +4,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { clsx } from "clsx";
 
-import moon from '@/images/icon/icon-moon.svg';
-import sun from '@/images/icon/icon-sun.svg';
+import moon from '../../../public/images/icon/icon-moon.svg';
+import sun from '../../../public/images/icon/icon-moon.svg';
 
 const ThemeToggler = ({className} : {className?:String}) => {
   const { theme, setTheme } = useTheme();

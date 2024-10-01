@@ -6,8 +6,6 @@ import { SectionConfig } from "@/types/section";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-import light from '@/images/shape/shape-dotted-light.svg';
-import dark from '@/images/shape/shape-dotted-dark.svg';
 
 const LTR = ({ className, config, children }: { className?: string, config: SectionConfig, children?: ReactNode }) => {
 
@@ -21,13 +19,13 @@ const LTR = ({ className, config, children }: { className?: string, config: Sect
                         <Image
                             fill
                             className="dark:hidden"
-                            src={light}
+                            src="/images/shape/shape-dotted-light.svg"
                             alt="Dotted Shape"
                         />
                         <Image
                             fill
                             className="hidden dark:block"
-                            src={dark}
+                            src="/images/shape/shape-dotted-dark.svg"
                             alt="Dotted Shape"
                         />
                     </>

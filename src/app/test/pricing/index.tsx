@@ -5,7 +5,6 @@ import PriceBanner from "@/components/Price/PriceBanner";
 import { PriceCard, PriceCardContent, PriceCardHeader } from "@/components/Price/PriceCard/PriceCard";
 import ImagePlaceholder from "@/components/Placeholder/Image";
 
-import light from '@/images/shape/shape-dotted-light.svg';
 
 const Pricing = () => {
   return (
@@ -16,7 +15,7 @@ const Pricing = () => {
           <div className="absolute -bottom-15 -z-1 h-full w-full">
             <Image
               fill
-              src={light}
+              src="/public/images/icon/icon-moon.svg"
               alt="Dotted"
               className="dark:hidden"
             />
