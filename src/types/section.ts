@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type SectionConfig = {
-    showBackgroundImage?: Boolean;
+    backgroundImage?: ReactNode;
     topTitle?: string;
     title?: string;
     subTitle?: string;

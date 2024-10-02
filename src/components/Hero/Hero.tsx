@@ -3,7 +3,10 @@ import { cn } from "@/lib/utils";
 import { HeroConfig } from "@/types/hero";
 import { ReactNode } from "react";
 
-
+/**
+ * Simple Hero. Jumbotron link, title (ReactNode) and subtitle (ReactNode) - additional content (ReactNode) can
+ * be added via children nodes.
+ */
 const HeroSimple = ({ className, config, children }: { className?: string, config: HeroConfig, children?: ReactNode }) => {
 
   return (
@@ -31,7 +34,10 @@ const HeroSimple = ({ className, config, children }: { className?: string, confi
 };
 
 
-
+/**
+ * Hero with Image Placeholder. Jumbotron link, title (ReactNode) and subtitle (ReactNode) - The actual Image can be placed
+ * via the children node.
+ */
 const HeroImage = ({ className, config, children }: { className?: string, config: HeroConfig, children?: ReactNode }) => {
 
   return (

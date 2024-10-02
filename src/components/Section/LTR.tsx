@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "next/image";
 import ImagePlaceholder from "../Placeholder/Image";
 import { SectionConfig } from "@/types/section";
 import { ReactNode } from "react";
@@ -11,25 +10,12 @@ const LTR = ({ className, config, children }: { className?: string, config: Sect
     return (
         <>
             {/* <!-- ===== RTL Start ===== --> */}
-            <div className={cn("relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0",className)}>
-                <div className="absolute bottom-10 -z-1 mx-auto h-[80%] w-[70%]">
-                    {config.showBackgroundImage ? (
-                        <>
-                        <Image
-                            fill
-                            className="dark:hidden"
-                            src="/images/shape/shape-dotted-light.svg"
-                            alt="Dotted Shape"
-                        />
-                        <Image
-                            fill
-                            className="hidden dark:block"
-                            src="/images/shape/shape-dotted-dark.svg"
-                            alt="Dotted Shape"
-                        />
-                    </>
-                    ) : ""}
-                </div>
+            <div className={cn("relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0", className)}>
+                {config.backgroundImage ? (
+                    <div className="absolute bottom-10 -z-1 mx-auto h-[80%] w-[70%]">
+                        {config.backgroundImage}
+                    </div>
+                ) : ""}
                 <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
                     <div className="flex items-center gap-8 lg:gap-32.5">
                         <div className="md:w-1/2">
@@ -62,7 +48,7 @@ const LTR = ({ className, config, children }: { className?: string, config: Sect
                                             </svg>
                                         </a>
                                     ) : ""}
-                                    <div className="w-full">{children}</div>
+                                <div className="w-full">{children}</div>
                             </div>
                         </div>
                         <div className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2">

@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 export type HeroConfig = {
     jumbotron?: HeroBtn,
     title: ReactNode,
-    subTitle?: string
+    subTitle?: ReactNode
   }
   
   export type HeroBtn = {
