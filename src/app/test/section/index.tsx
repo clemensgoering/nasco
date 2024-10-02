@@ -5,7 +5,7 @@ export default function Sections() {
     return (
         <>
             <RTL config={{
-                showBackgroundImage: true,
+                backgroundImage: undefined,
                 topTitle: "Right-to-Left",
                 title: "Lorem ipsum dolor sit",
                 subTitle: "Week",
@@ -16,7 +16,6 @@ export default function Sections() {
                 }
             }} />
             <LTR config={{
-                showBackgroundImage: true,
                 topTitle: "Left-To-Right",
                 title: "Lorem ipsum dolor sit amet",
                 subTitle: "Week",
