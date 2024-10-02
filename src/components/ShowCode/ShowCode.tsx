@@ -22,9 +22,9 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
     const [transformed, setTransformed] = useState("");
 
     useEffect(() => {
-        const html = codetransform({ code : code, lang: language});
+        const html = codetransform({ code: code, lang: language });
         setTransformed(html);
-      }, []);
+    }, []);
 
     const toggleBlock = (block: String) => {
         switch (block) {
@@ -87,10 +87,12 @@ const ShowCode = ({ className, descriptionNode, code, language }: { className?: 
                     <div className={`${descConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800`} id="about" role="tabpanel" aria-labelledby="about-tab">
                         {descriptionNode}
                     </div>
-                    <div className={`${codeConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800`} id="services" role="tabpanel" aria-labelledby="services-tab">
-                        <div className="flex w-full relative overflow-scroll rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-slate-200 dark:text-gray-200">
-                            { transformed !== "" ? (<><div dangerouslySetInnerHTML={{ __html: transformed }} /></>) : "" }
-                        </div>
+                    <div className={`${codeConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 relative`} id="services" role="tabpanel" aria-labelledby="services-tab">
+                        <pre className="px-4 py-4">
+                            <code className="block overflow-x-auto rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-slate-200 dark:text-gray-200">
+                                {transformed !== "" ? (<><div dangerouslySetInnerHTML={{ __html: transformed }} /></>) : ""}
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ const Cards = () => {
             {cardData.map((card, key) => (
               <Card key={key} config={card}/>
             ))}
-                                <Card config={{ title: "Maintenance & Performance" }}>
+                    <Card config={{ title: "Maintenance & Performance", menuItems: []}}>
                         <ul>
                             <li>Our component library provides modular, reusable components that allow teams to easily scale large applications</li>,
                             <li>Simplified and reduced set of dependencies to keep the costs of needed assets low</li>,
