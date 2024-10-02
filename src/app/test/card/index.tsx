@@ -10,6 +10,13 @@ const Cards = () => {
             {cardData.map((card, key) => (
               <Card key={key} config={card}/>
             ))}
+                                <Card config={{ title: "Maintenance & Performance" }}>
+                        <ul>
+                            <li>Our component library provides modular, reusable components that allow teams to easily scale large applications</li>,
+                            <li>Simplified and reduced set of dependencies to keep the costs of needed assets low</li>,
+                            <li>With TypeScript support and structured documentation, understanding and using the components becomes easier</li>
+                        </ul>
+                    </Card>
         </div>
       </section>
     </>

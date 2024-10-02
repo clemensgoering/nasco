@@ -13,8 +13,8 @@ const Card = ({ className, config, children }: { className?: string, config?: Ca
 
   const variants =
   {
-    default: "flex relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full",
-    minimal: "flex relative rounded-xl border border-neutral-200 mt-10 p-7.5 bg-white text-neutral-950 shadow dark:border-neutral-800 dark:bg-blacksection dark:text-gray-200 w-full"
+    default: "relative rounded-lg border border-stroke bg-white mt-10 p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full",
+    minimal: "relative rounded-xl border border-neutral-200 mt-10 p-7.5 bg-white text-neutral-950 shadow dark:border-neutral-800 dark:bg-blacksection dark:text-gray-200 w-full"
   }
 
   function getVariant(variant?: string) {
@@ -46,7 +46,7 @@ const Card = ({ className, config, children }: { className?: string, config?: Ca
         </div>
         {/* <!-- =====  Menu Start ===== --> */}
         {config?.menuItems?.length !== undefined && config?.menuItems?.length > 0 ? (
-          <div className="flex-none justify-end ">
+          <div className="relative flex-none justify-end ">
             <button id="dropdownButton" onClick={() => toggleMenu()} data-dropdown-toggle="dropdown" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-1.5" type="button">
               <span className="sr-only">Open dropdown</span>
               <DotsVerticalIcon />
@@ -63,7 +63,6 @@ const Card = ({ className, config, children }: { className?: string, config?: Ca
           </div>
         ) : ""}
         {/* <!-- =====  Menu End ===== --> */}
-
         {children}
       </div>
       {/* <!-- ===== Card End ===== --> */}

@@ -34,7 +34,7 @@ const PriceCardContent = ({ className, conf, children }: { className?: string, c
           <h4 className={cn("mb-2.5 text-para2 font-medium text-black dark:text-white",className)}>
               {conf.title}
           </h4>
-          <p>{conf.description}</p>
+          <div className="py-4">{conf.description}</div>
           {children}
           {conf?.priceButton !== undefined ? (
               <a href={conf?.priceButton?.link}

@@ -25,7 +25,7 @@ const PriceBanner = ({className, conf, children }: { className?: string, conf: P
                 <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
                     {conf.title}
                 </h4>
-                <p>{conf.description}</p>
+                <div className="py-4">{conf.description}</div>
 
                 <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                     <ul>

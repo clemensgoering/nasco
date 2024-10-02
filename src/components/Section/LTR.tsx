@@ -42,9 +42,9 @@ const LTR = ({ className, config, children }: { className?: string, config: Sect
                                     {config?.subTitle}
                                 </span>
                             </h2>
-                            <p>
+                            <div className="py-4">
                                 {config?.content}
-                            </p>
+                            </div>
                             <div>
                                 {config?.buttonConfig !== undefined ?
                                     (

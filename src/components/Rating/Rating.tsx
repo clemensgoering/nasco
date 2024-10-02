@@ -31,7 +31,7 @@ const UserRating = ({ className, rating, children }: { className?: string, ratin
                 <article>
                     <div className="flex items-center mb-4">
                         <div className="font-medium dark:text-white">
-                            <p>{rating.user}<time className="block text-sm text-gray-500 dark:text-gray-400">{rating.date}</time></p>
+                            <div className="py-4">{rating.user}<time className="block text-sm text-gray-500 dark:text-gray-400">{rating.date}</time></div>
                         </div>
                     </div>
                     <div className="flex items-center mb-1 space-x-1 rtl:space-x-reverse">

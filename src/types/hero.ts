@@ -1,6 +1,8 @@
+import { ReactNode } from "react"
+
 export type HeroConfig = {
     jumbotron?: HeroBtn,
-    title: string,
+    title: ReactNode,
     subTitle?: string
   }
   
