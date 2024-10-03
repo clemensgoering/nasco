@@ -9,6 +9,10 @@ Reduced functionality scope to support the most common user interactions. Follow
 to create a professional appearance without spending to much effort. Mockup as well as complex solutions
 can be enriched by the provided elements.
 
+Further insight and documentation can be found <a href="https://nasco-docu-5wc628no4-clehucks-projects.vercel.app/">here</a>.
+Full documentation page has been build, based on components from this package.
+(Feedback channel will be added to report issues and provide further feedback and requests on that page as well)
+
 
 ![NPM Downloads](https://img.shields.io/npm/dw/:nasco)
 
@@ -17,8 +21,7 @@ npm i nasco
 ```
 
 > [!NOTE]
-> This Library is still under construction. Images and Styles are currently redesigned.
-> Components can be used with Version 1.0.0
+> This Library is still under construction. The set of components currently included will be enriched as part of future releases
 
 ## Supported Functionalities
 - Merge and clsx integration for extended customizations of each main component
@@ -26,60 +29,46 @@ npm i nasco
 
 ## Components
 
-### Header
+**Header**
 Clean and simple header element. Supporting mobile device size adjustments as well as customizable link attributes.
 Additional space for custom child-elements. For example, the internal **Button** component can be used with pre-configured styles and size
 to personalize the overall UX.
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/header_20240930.png)
 
-### Hero
+**Hero**
 The current package provides two different Hero versions.
 **Simple (HeroSimple)** - minimalistic text/centered design with single button
 **Image (HeroImage)** - Separated text and image areas
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/hero_20240930.png)
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/hero_2_20240930.png)
 
-### RTL (Right to left, Image and content)
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/rtl_20240929.png)
-
-### LTR (Left to right, Content and Image)
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/ltr_20240929.png)
-
-### Placeholder (Image Template)
+**RTL (Right to left, Image and content)**
+**LTR (Left to right, Content and Image)**
+**Placeholder (Image Template)**
 As shown in the RTL or LTR section example, a simple image placeholder can be used as fallback component,
 or in case you are still in development mode and need a temporary solution.
 
-### Cards
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/cards_20241003.png)
+**Cards**
 Simple cards, including crucial sections like "titles", "content" and "menu" enriched by a badge that
 can be added to the top by choosing one of three versions.
 
-### Price Elements
+**Price Elements**
 Two versions: 
 Banner / extended version
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/price_1_20240929.png)
-
 Simplified Card approach with fully customizable header and content section.
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/price_2_20240929.png)
 
-### Rating
+**Rating**
 Simplified Rating Component with crucial properties, as well as a customizable footer section for more content, links ...
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/ratings_20240929.png)
 
-### ShowCode
+**ShowCode**
 Component with two main sections.
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/showcode_20240929.png)
 1. Customizable component placeholder, used to maintain description, images and other describing or visualizing elements.
 2. Code example. Beautified via **highlight.js** for an increased use for various languages
 
-### Testimonials
-
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/testimonial_20241003.png)
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/testimonial_2_20241003.png)
+**Testimonials**
 1. Two different styles. A minimalistic Grid approach and a slider and card based version
 2. Adding **swiper** package for interactive behavior
 
-### Brands
-
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/brands_20241003.png)
+**Brands**
 Either choose by using a motion supported brand component, or directly integrate the provided **BrandList**
+
+
+## More
+Learn more about this package, content and feature scope by visiting <a href="https://nasco-docu-5wc628no4-clehucks-projects.vercel.app/">the documentation</a>.
