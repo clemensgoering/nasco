@@ -79,3 +79,7 @@ Component with two main sections.
 1. Two different styles. A minimalistic Grid approach and a slider and card based version
 2. Adding **swiper** package for interactive behavior
 
+### Brands
+
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/brands_20241003.png)
+Either choose by using a motion supported brand component, or directly integrate the provided **BrandList**

@@ -23,8 +23,9 @@ const BrandList = ( { className, brands, smScale, lgScale } : BrandListProps) =>
   }
 
   const getLargeScale = () =>{
+    console.log(brands.length);
     let scale = `lg:grid-cols-${brands.length}`;
-    if(lgScale !== undefined) {
+    if(lgScale !== undefined && lgScale > 2 ) {
       scale = `lg:grid-cols-${lgScale}`;
     }
     return scale;
