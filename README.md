@@ -51,6 +51,8 @@ or in case you are still in development mode and need a temporary solution.
 
 ### Cards
 ![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/cards_20240929.png)
+Simple cards, including crucial sections like "titles", "content" and "menu" enriched by a badge that
+can be added to the top by choosing one of three versions.
 
 ### Price Elements
 Two versions: 
@@ -69,4 +71,11 @@ Component with two main sections.
 ![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/showcode_20240929.png)
 1. Customizable component placeholder, used to maintain description, images and other describing or visualizing elements.
 2. Code example. Beautified via **highlight.js** for an increased use for various languages
+
+### Testimonials
+
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/testimonial_20241003.png)
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/testimonial_2_20241003.png)
+1. Two different styles. A minimalistic Grid approach and a slider and card based version
+2. Adding **swiper** package for interactive behavior
 

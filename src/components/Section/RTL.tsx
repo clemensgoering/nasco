@@ -9,8 +9,7 @@ const RTL = ({ className, config, children }: { className?: string, config: Sect
     return (
         <>
             {/* <!-- ===== About Start ===== --> */}
-            <section className={cn("overflow-hidden pb-20 lg:pb-25 xl:pb-30", className)}>
-                <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+            <section className={cn("overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46", className)}>
                     <div className="absolute -top-16 -z-1 mx-auto h-[350px] w-[90%]">
                         {config.backgroundImage ? (
                             <div className="absolute bottom-10 -z-1 mx-auto h-[80%] w-[70%]">
@@ -58,7 +57,6 @@ const RTL = ({ className, config, children }: { className?: string, config: Sect
                             </div>
                         </div>
                     </div>
-                </div>
             </section>
             {/* <!-- ===== About End ===== --> */}
         </>

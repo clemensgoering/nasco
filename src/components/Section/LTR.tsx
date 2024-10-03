@@ -10,7 +10,7 @@ const LTR = ({ className, config, children }: { className?: string, config: Sect
     return (
         <>
             {/* <!-- ===== RTL Start ===== --> */}
-            <div className={cn("relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0", className)}>
+            <div className={cn("overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46", className)}>
                 {config.backgroundImage ? (
                     <div className="absolute bottom-10 -z-1 mx-auto h-[80%] w-[70%]">
                         {config.backgroundImage}
