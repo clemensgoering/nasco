@@ -4,7 +4,9 @@ import { ReactNode } from "react";
 
 export type ButtonConfig = {
     style?: "default" | "outlined" | "link",
-    size?: "default" | "sm" | "lg"
+    size?: "default" | "sm" | "lg",
+    href?: string,
+    onClick?: any
 }
 
 const Button = ({ className, config, children }: { className?: String, config?: ButtonConfig, children?: ReactNode }) => {
@@ -56,8 +58,10 @@ const Button = ({ className, config, children }: { className?: String, config?: 
     }
 
 
-    return <button className={cn(btnCSS, getStyle(config?.style), getSize(config?.size), className)}>{children}</button>;
-};
+    return (config?.href !== "" ? 
+        <a href={config?.href}><button className={cn(btnCSS, getStyle(config?.style), getSize(config?.size), className)} onClick={config?.onClick}>{children}</button></a> : 
+        <button className={cn(btnCSS, getStyle(config?.style), getSize(config?.size), className)} onClick={config?.onClick}>{children}</button>)
+    };
 
 export default Button;
 
