@@ -50,7 +50,7 @@ As shown in the RTL or LTR section example, a simple image placeholder can be us
 or in case you are still in development mode and need a temporary solution.
 
 ### Cards
-![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/cards_20240929.png)
+![Example image](https://github.com/clemensgoering/nasco/raw/master/docs/cards_20241003.png)
 Simple cards, including crucial sections like "titles", "content" and "menu" enriched by a badge that
 can be added to the top by choosing one of three versions.
 
