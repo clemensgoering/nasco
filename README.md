@@ -9,7 +9,7 @@ Reduced functionality scope to support the most common user interactions. Follow
 to create a professional appearance without spending to much effort. Mockup as well as complex solutions
 can be enriched by the provided elements.
 
-Further insight and documentation can be found <a href="https://nasco-docu-5wc628no4-clehucks-projects.vercel.app/">here</a>.
+Further insight and documentation can be found <a href="https://nasco-docu.vercel.app/">here</a>.
 Full documentation page has been build, based on components from this package.
 (Feedback channel will be added to report issues and provide further feedback and requests on that page as well)
 
@@ -71,4 +71,4 @@ Either choose by using a motion supported brand component, or directly integrate
 
 
 ## More
-Learn more about this package, content and feature scope by visiting <a href="https://nasco-docu-5wc628no4-clehucks-projects.vercel.app/">the documentation</a>.
+Learn more about this package, content and feature scope by visiting <a href="https://nasco-docu.vercel.app/">the documentation</a>.
