@@ -10,8 +10,10 @@ to create a professional appearance without spending to much effort. Mockup as w
 can be enriched by the provided elements.
 
 Further insight and documentation can be found <a href="https://nasco-docu.vercel.app/">here</a>.
-Full documentation page has been build, based on components from this package.
-(Feedback channel will be added to report issues and provide further feedback and requests on that page as well)
+The documentation page has been fully built by using components from this package.
+
+If you would like to share your feedback, extension ideas or report bugs, kindly use the contact option that
+is available at the following contact page: <a href="https://nasco-docu.vercel.app/contact">Link</a>
 
 
 ![NPM Downloads](https://img.shields.io/npm/dw/:nasco)
