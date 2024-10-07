@@ -71,6 +71,7 @@ Component with two main sections.
 **Brands**
 Either choose by using a motion supported brand component, or directly integrate the provided **BrandList**
 
-
+**Timeline**
+The Timeline component offers a modern, sleek way to display chronological events, making it perfect for showcasing personal CVs, project milestones, or any event-based lists. 
 ## More
 Learn more about this package, content and feature scope by visiting <a href="https://nasco-docu.vercel.app/">the documentation</a>.

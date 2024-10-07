@@ -8,6 +8,7 @@ import Code from "./test/showcode";
 import HeroSection from "./test/hero";
 import Brands from "./test/brand";
 import Testimonial from "./test/testimonial";
+import TimelinePage from "./test/timeline";
 
 export const metadata: Metadata = {
     title: "Home - Nasco",
@@ -21,6 +22,7 @@ export default function Home() {
             <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
                 {<HeroSection />} {/** Contains HeroSimple and HeroImage */}
                 {<Brands />}
+                {<TimelinePage />}
                 {<Sections />}
                 {<Pricing />}
                 {<Rating />}
