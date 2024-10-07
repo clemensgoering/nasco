@@ -73,5 +73,9 @@ Either choose by using a motion supported brand component, or directly integrate
 
 **Timeline**
 The Timeline component offers a modern, sleek way to display chronological events, making it perfect for showcasing personal CVs, project milestones, or any event-based lists. 
+
+**Footer**
+The Footer component is a versatile layout block designed to create clean, organized sections on your website. It includes multiple customizable areas for links, text, or any other information
+
 ## More
 Learn more about this package, content and feature scope by visiting <a href="https://nasco-docu.vercel.app/">the documentation</a>.
