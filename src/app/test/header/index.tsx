@@ -6,15 +6,12 @@ import React from "react";
 
 const HeaderElement = () => {
   return (
-    <>
-      <Header config={{
-        homeNode: <HomeIcon className="h-6 w-6 mt-1"></HomeIcon>,
-        menu: menuData,
-        themeToggler: true
-      }}>
-        <Button config={{ style: "link" }}><GitHubLogoIcon className="mr-2"/>Repo</Button>
-      </Header>
-    </>
+    <Header logo={<HomeIcon className="mt-1 h-6 w-6" />} menu={menuData} themeToggler>
+      <Button variant="link" href="https://github.com/clemensgoering/nasco">
+        <GitHubLogoIcon className="mr-2" />
+        Repo
+      </Button>
+    </Header>
   );
 };
 

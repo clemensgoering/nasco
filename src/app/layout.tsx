@@ -5,7 +5,7 @@ import "@/styles/main.css"
 import { ThemeProvider } from "next-themes";
 import HeaderElement from "./test/header";
 import Footer from "@/components/Footer/Footer";
-import BackToTop from "@/components/BackToTop/Backtotop";
+import BackToTop from "@/components/BackToTop/BackToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 

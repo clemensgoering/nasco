@@ -2,3 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Nasco theme tokens.
+ * Every color used by the components resolves to one of these variables,
+ * so consumers can re-theme the library by overriding them in their own
+ * stylesheet — no Tailwind configuration required.
+ */
+@layer base {
+  :root {
+    --nasco-stroke: #eeeeee;
+    --nasco-stroke-dark: #2d2f40;
+    --nasco-hover-dark: #252a42;
+    --nasco-titlebg: #adfff8;
+    --nasco-titlebg2: #ffeac2;
+    --nasco-titlebg-dark: #46495a;
+    --nasco-btn-dark: #292e45;
+    --nasco-white: #ffffff;
+    --nasco-black: #181c31;
+    --nasco-black-hover: #2c3149;
+    --nasco-black-section: #1c2136;
+    --nasco-primary: #006bff;
+    --nasco-primary-hover: #0063ec;
+    --nasco-meta: #20c5a8;
+    --nasco-waterloo: #757693;
+    --nasco-manatee: #999aa1;
+    --nasco-alabaster: #fbfbfb;
+    --nasco-zumthor: #edf5ff;
+    --nasco-socialicon: #d1d8e0;
+
+    /* Code block (ShowCode) */
+    --nasco-code-bg: #f8fafc;
+    --nasco-code-fg: #1e293b;
+    --nasco-code-keyword: #7c3aed;
+    --nasco-code-string: #15803d;
+    --nasco-code-number: #b45309;
+    --nasco-code-comment: #64748b;
+    --nasco-code-title: #006bff;
+    --nasco-code-attr: #0e7490;
+  }
+
+  .dark {
+    --nasco-code-bg: #14182b;
+    --nasco-code-fg: #e2e8f0;
+    --nasco-code-keyword: #c4b5fd;
+    --nasco-code-string: #86efac;
+    --nasco-code-number: #fcd34d;
+    --nasco-code-comment: #8b90a7;
+    --nasco-code-title: #7ab8ff;
+    --nasco-code-attr: #67e8f9;
+  }
+}
+
+/*
+ * highlight.js theme (used by the ShowCode component).
+ * Kept outside of any Tailwind layer: these classes are injected at runtime
+ * via highlight.js output, so they must survive content-based tree-shaking.
+ */
+.nasco-code .hljs {
+  color: var(--nasco-code-fg);
+  background: var(--nasco-code-bg);
+}
+.nasco-code .hljs-keyword,
+.nasco-code .hljs-selector-tag,
+.nasco-code .hljs-built_in,
+.nasco-code .hljs-type {
+  color: var(--nasco-code-keyword);
+}
+.nasco-code .hljs-string,
+.nasco-code .hljs-addition,
+.nasco-code .hljs-regexp {
+  color: var(--nasco-code-string);
+}
+.nasco-code .hljs-number,
+.nasco-code .hljs-literal,
+.nasco-code .hljs-symbol,
+.nasco-code .hljs-deletion {
+  color: var(--nasco-code-number);
+}
+.nasco-code .hljs-comment,
+.nasco-code .hljs-quote,
+.nasco-code .hljs-meta {
+  color: var(--nasco-code-comment);
+  font-style: italic;
+}
+.nasco-code .hljs-title,
+.nasco-code .hljs-function,
+.nasco-code .hljs-section,
+.nasco-code .hljs-name {
+  color: var(--nasco-code-title);
+}
+.nasco-code .hljs-attr,
+.nasco-code .hljs-attribute,
+.nasco-code .hljs-variable,
+.nasco-code .hljs-template-variable,
+.nasco-code .hljs-class {
+  color: var(--nasco-code-attr);
+}
+.nasco-code .hljs-emphasis {
+  font-style: italic;
+}
+.nasco-code .hljs-strong {
+  font-weight: 700;
+}

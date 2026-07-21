@@ -1,19 +1,26 @@
-import React from 'react';
-import { useTheme } from "next-themes";
-import { clsx } from "clsx";
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+"use client";
 
-const ThemeToggler = ({className} : {className?:String}) => {
+import React from "react";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
+
+/** Light/dark mode switch backed by next-themes. */
+const ThemeToggler = ({ className }: { className?: string }) => {
   const { theme, setTheme } = useTheme();
 
   return (
     <button
-      aria-label="theme toggler"
+      type="button"
+      aria-label="Toggle color theme"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={clsx("bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-blackho p-2 text-black dark:text-white lg:static",className)}
+      className={cn(
+        "absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full p-2 text-black hover:bg-slate-200 dark:text-white dark:hover:bg-blackho lg:static",
+        className,
+      )}
     >
-      <MoonIcon className="dark:hidden h-5 w-5"/>
-      <SunIcon className="hidden dark:block h-5 w-5"/>
+      <MoonIcon className="h-5 w-5 dark:hidden" />
+      <SunIcon className="hidden h-5 w-5 dark:block" />
     </button>
   );
 };

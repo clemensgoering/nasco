@@ -1,33 +1,33 @@
-import { Rating } from "@/types/rating";
+import { RatingData } from "@/types/rating";
 
-const RatingData: Rating[] = [
+const ratingData: RatingData[] = [
   {
-    _id: 1,
+    id: 1,
     user: "Jese Leos",
     title: "Aasdas asdasd dada dasda",
     date: "2017-01-01",
     stars: 4,
-    comment:"Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
     publishedAt: "March 3, 2017",
   },
   {
-    _id: 2,
-    user: "Jese Leos",    
+    id: 2,
+    user: "Jese Leos",
     title: "Aasdas asdasd dada dasda",
     date: "2017-01-01",
     stars: 3,
-    comment:"Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
     publishedAt: "March 3, 2017",
   },
   {
-    _id: 3,
+    id: 3,
     user: "Jese Leos",
     title: "Aasdas asdasd dada dasda",
     date: "2017-01-01",
     stars: 5,
-    comment:"Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
     publishedAt: "March 3, 2017",
-  }
+  },
 ];
 
-export default RatingData;
+export default ratingData;

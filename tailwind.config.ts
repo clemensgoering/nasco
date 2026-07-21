@@ -1,9 +1,7 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
-module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+const config: Config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
   theme: {
     fontFamily: {
@@ -13,25 +11,25 @@ module.exports = {
       colors: {
         current: "currentColor",
         transparent: "transparent",
-        stroke: "#EEEEEE",
-        strokedark: "#2D2F40",
-        hoverdark: "#252A42",
-        titlebg: "#ADFFF8",
-        titlebg2: "#FFEAC2",
-        titlebgdark: "#46495A",
-        btndark: "#292E45",
-        white: "#FFFFFF",
-        black: "#181C31",
-        blackho: "#2C3149",
-        blacksection: "#1C2136",
-        primary: "#006BFF",
-        primaryho: "#0063EC",
-        meta: "#20C5A8",
-        waterloo: "#757693",
-        manatee: "#999AA1",
-        alabaster: "#FBFBFB",
-        zumthor: "#EDF5FF",
-        socialicon: "#D1D8E0",
+        stroke: "var(--nasco-stroke)",
+        strokedark: "var(--nasco-stroke-dark)",
+        hoverdark: "var(--nasco-hover-dark)",
+        titlebg: "var(--nasco-titlebg)",
+        titlebg2: "var(--nasco-titlebg2)",
+        titlebgdark: "var(--nasco-titlebg-dark)",
+        btndark: "var(--nasco-btn-dark)",
+        white: "var(--nasco-white)",
+        black: "var(--nasco-black)",
+        blackho: "var(--nasco-black-hover)",
+        blacksection: "var(--nasco-black-section)",
+        primary: "var(--nasco-primary)",
+        primaryho: "var(--nasco-primary-hover)",
+        meta: "var(--nasco-meta)",
+        waterloo: "var(--nasco-waterloo)",
+        manatee: "var(--nasco-manatee)",
+        alabaster: "var(--nasco-alabaster)",
+        zumthor: "var(--nasco-zumthor)",
+        socialicon: "var(--nasco-socialicon)",
       },
       fontSize: {
         metatitle: ["12px", "20px"],
@@ -61,7 +59,6 @@ module.exports = {
         14.5: "3.625rem",
         15: "3.75rem",
         15.5: "3.875rem",
-        16: "4rem",
         17: "4.25rem",
         17.5: "4.375rem",
         18: "4.5rem",
@@ -131,8 +128,9 @@ module.exports = {
           "50%": { transform: "translateY(0)" },
         },
       },
-      animation: {},
     },
   },
   plugins: [],
 };
+
+export default config;

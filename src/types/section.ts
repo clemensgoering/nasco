@@ -1,17 +1,7 @@
-import { ReactNode } from "react";
-
-export type SectionConfig = {
-    backgroundImage?: ReactNode;
-    topTitle?: string;
-    title?: string;
-    subTitle?: string;
-    content?: ReactNode;
-    buttonConfig?: SectionButton;
-    Image?: ReactNode;
-  };
-
-  export type SectionButton = {
-    link?: string;
-    text?: string;
-  };
-  
+/** Arrow-styled call-to-action link of the LTR/RTL section components. */
+export type SectionButton = {
+  /** Link target. */
+  link?: string;
+  /** Link text, e.g. "Learn More". */
+  text?: string;
+};

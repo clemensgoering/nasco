@@ -3,73 +3,60 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import { motion } from "framer-motion";
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import SingleTestimonial from "@/components/Testimonial/SingleTestimonial";
-import { Testimonial } from "@/types/testimonial";
+import SingleTestimonial from "../SingleTestimonial";
+import { Reveal } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { Testimonial } from "@/types/testimonial";
 
-const TestimonialSlider = ({ data, slidesPerView, className, classNameCard } : { data : Testimonial[],  slidesPerView?: number, className?: string, classNameCard?: string } ) => {
-  return (
-    <>
-      <section>
-        <motion.div
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: -20,
-            },
+export interface TestimonialSliderProps {
+  /** Testimonials rendered as slides. */
+  items: Testimonial[];
+  /** Slides shown at once on desktop. Defaults to 2 (1 on mobile). */
+  slidesPerView?: number;
+  className?: string;
+  /** Extra classes applied to each testimonial card inside the slider. */
+  classNameCard?: string;
+}
 
-            visible: {
-              opacity: 1,
-              y: 0,
-            },
+/**
+ * Autoplaying testimonial carousel based on Swiper, with clickable pagination.
+ *
+ * @example
+ * <TestimonialSlider items={testimonials} slidesPerView={2} />
+ */
+const TestimonialSlider = ({
+  items,
+  slidesPerView = 2,
+  className,
+  classNameCard,
+}: TestimonialSliderProps) => (
+  <section>
+    <Reveal className={cn(className)}>
+      <div className="swiper mb-20 pb-22.5">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={slidesPerView}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          modules={[Autoplay, Pagination]}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView },
           }}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 1, delay: 0.1 }}
-          viewport={{ once: true }}
-          className={cn("animate_top",className)}
         >
-          {/* <!-- Slider main container --> */}
-          <div className="swiper mb-20 pb-22.5">
-            {/* <!-- Additional required wrapper --> */}
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={slidesPerView ? slidesPerView : 2}
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay, Pagination]}
-              breakpoints={{
-                // when window width is >= 640px
-                0: {
-                  slidesPerView: 1,
-                },
-                // when window width is >= 768px
-                768: {
-                  slidesPerView: 2,
-                },
-              }}
-            >
-              {data.map((review) => (
-                <SwiperSlide key={review?.id}>
-                  <SingleTestimonial review={review} className={classNameCard}/>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </motion.div>
-      </section>
-    </>
-  );
-};
+          {items.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <SingleTestimonial testimonial={testimonial} className={classNameCard} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </Reveal>
+  </section>
+);
 
 export default TestimonialSlider;

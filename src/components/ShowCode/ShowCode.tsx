@@ -1,104 +1,109 @@
-"use client"
+"use client";
 
+import React, { ReactNode, useEffect, useState } from "react";
+import { CheckIcon, CodeIcon, CopyIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import codetransform from "@/lib/codetransform";
-import { cn } from "@/lib/utils";
-import { CodeIcon, DownloadIcon, InfoCircledIcon } from "@radix-ui/react-icons";
-import React from "react";
-import { ReactNode, useEffect, useState } from "react";
+import Tabs from "../Tabs/Tabs";
 
-export type CSSBtnConfig = {
-    visibility: String;
-    selected: Boolean;
-};
+export interface ShowCodeProps {
+  className?: string;
+  /** Content of the description tab: text, images, live previews, ... */
+  description?: ReactNode;
+  /** Raw code shown (highlighted) in the code tab and copied to the clipboard. */
+  code: string;
+  /**
+   * Highlight.js language id. Registered out of the box: js/jsx, ts/tsx,
+   * json, bash/sh/shell, css and html/xml; anything else falls back to
+   * auto-detection.
+   */
+  language: string;
+  /** Custom tab labels, e.g. { description: "Preview" }. */
+  labels?: { description?: ReactNode; code?: ReactNode };
+}
 
-const ShowCode = ({ className, descriptionNode, code, language }: { className?: string, descriptionNode?: ReactNode, code: string, language: string }) => {
+/**
+ * Tabbed panel switching between a description slot and a highlighted code
+ * example with a copy-to-clipboard action. Built on the generic Tabs component.
+ *
+ * @example
+ * <ShowCode
+ *   description={<LiveDemo />}
+ *   code={`<Button>Save</Button>`}
+ *   language="tsx"
+ *   labels={{ description: "Preview" }}
+ * />
+ */
+const ShowCode = ({ className, description, code, language, labels }: ShowCodeProps) => {
+  const [copied, setCopied] = useState(false);
+  const [highlighted, setHighlighted] = useState("");
 
-    const cssActive = "font-bold text-blacksection dark:text-white";
-    const cssInactive = "dark:hover:text-gray-300";
+  useEffect(() => {
+    setHighlighted(codetransform({ code, lang: language }));
+  }, [code, language]);
 
-    const [descConf, setDescription] = useState({ visibility: "block", selected: true, style: cssActive });
-    const [codeConf, setCode] = useState({ visibility: "hidden", selected: false, style: cssInactive });
-    const [copy, setCopyCommand] = useState("");
-    const [transformed, setTransformed] = useState("");
+  useEffect(() => {
+    if (!copied) return;
+    const timer = setTimeout(() => setCopied(false), 2000);
+    return () => clearTimeout(timer);
+  }, [copied]);
 
-    useEffect(() => {
-        const html = codetransform({ code: code, lang: language });
-        setTransformed(html);
-    }, []);
+  const copyCode = () => {
+    navigator.clipboard.writeText(code).then(() => setCopied(true));
+  };
 
-    const toggleBlock = (block: String) => {
-        switch (block) {
-            case "default":
-                setDescription({ visibility: "block", selected: true, style: cssActive });
-                setCode({ visibility: "hidden", selected: false, style: cssInactive });
-                break;
-            case "code":
-                setDescription({ visibility: "hidden", selected: false, style: cssInactive });
-                setCode({ visibility: "block", selected: true, style: cssActive });
-                break;
-        }
-    }
-    const copyCode = () => {
-        navigator.clipboard.writeText(code).then(
-            () => {
-                setCopyCommand("Copied to Clipboard");
-                setTimeout(() => {
-                    setCopyCommand("");
-                }, 2000);
-            },
-            () => {
-                setCopyCommand("Copied to Clipboard failed");
-                setTimeout(() => {
-                    setCopyCommand("");
-                }, 2000);
-            },
-        );
-
-
-    }
-
-    return (
-        <>
-
-
-            <div className={cn("w-full bg-white border rounded-lg border-gray-200 shadow dark:bg-blacksection dark:border-gray-600", className)}>
-                <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-tr-lg rounded-tl-lg dark:bg-blacksection dark:border-gray-700 dark:text-gray-400 bg-gray-50" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-                    <li className="flex-none">
-                        <button onClick={() => toggleBlock("default")} id="defaultBtn" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected={descConf.selected} className={cn("flex  p-4 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700", descConf.style)}>
-                            <InfoCircledIcon className="flex w-4.5 h-4.5 mr-2" />Description</button>
-                    </li>
-                    <li className="flex-none">
-                        <button onClick={() => toggleBlock("code")} id="codeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected={codeConf.selected} className={cn("flex  p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700", codeConf.style)}>
-                            Show Code <CodeIcon className="flex w-4.5 h-4.5 ml-2" /></button>
-                    </li>
-                    <li className="flex-1">
-                    </li>
-                    <li className="flex-none">
-                        <div className="inline-block p-4">{copy}</div>
-                    </li>
-                    <li className="flex-none">
-                        <button onClick={() => copyCode()} id="copyCodeBtn" data-tabs-target="#services" type="button" role="tab" aria-controls="services" className="flex p-4 hover:text-gray-600 hover:bg-gray-100 rounded-tr-md rounded-br-md dark:hover:bg-gray-700">
-                            <DownloadIcon className="w-4.5 h-5 " />
-                        </button>
-                    </li>
-                </ul>
-
-                <div id="defaultTabContent">
-                    <div className={`${descConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800`} id="about" role="tabpanel" aria-labelledby="about-tab">
-                        {descriptionNode}
-                    </div>
-                    <div className={`${codeConf.visibility} p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 relative`} id="services" role="tabpanel" aria-labelledby="services-tab">
-                        <pre className="px-4 py-4">
-                            <code className="block overflow-x-auto rounded-xl border border-neutral-200 p-7.5 bg-slate-100 text-neutral-950 shadow dark:border-neutral-800 dark:bg-slate-200 dark:text-gray-200">
-                                {transformed !== "" ? (<><div dangerouslySetInnerHTML={{ __html: transformed }} /></>) : ""}
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+  return (
+    <Tabs
+      className={className}
+      items={[
+        {
+          id: "description",
+          label: (
+            <>
+              <InfoCircledIcon className="h-4.5 w-4.5" />
+              {labels?.description ?? "Description"}
+            </>
+          ),
+          content: description,
+        },
+        {
+          id: "code",
+          label: (
+            <>
+              {labels?.code ?? "Show Code"}
+              <CodeIcon className="h-4.5 w-4.5" />
+            </>
+          ),
+          content: (
+            <div className="nasco-code relative">
+              <pre className="p-4">
+                <code
+                  className="hljs block overflow-x-auto rounded-xl border border-neutral-200 p-7.5 shadow dark:border-neutral-800"
+                  dangerouslySetInnerHTML={{ __html: highlighted }}
+                />
+              </pre>
             </div>
-
-        </>
-    );
+          ),
+        },
+      ]}
+      actions={
+        <button
+          type="button"
+          onClick={copyCode}
+          aria-label="Copy code to clipboard"
+          className="flex items-center gap-2 rounded-tr-md p-4 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-700"
+        >
+          {copied ? (
+            <>
+              <CheckIcon className="h-4.5 w-4.5 text-green-500" />
+              <span className="text-green-500">Copied</span>
+            </>
+          ) : (
+            <CopyIcon className="h-4.5 w-4.5" />
+          )}
+        </button>
+      }
+    />
+  );
 };
 
 export default ShowCode;

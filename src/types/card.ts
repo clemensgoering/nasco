@@ -1,16 +1,13 @@
-import { ReactNode } from "react";
+/** Visual style of the Card component: bordered default or flat minimal look. */
+export type CardVariant = "default" | "minimal";
 
+/** Badge shown centered on the top edge of a Card. */
 export type CardBadge = {
-    style: "default" | "red" | "green",
-    text: string
-  }
-
-export type CardConfig = {
-    title?: String;
-    variant?: Variant;
-    menuItems?: Array<ReactNode>;
-    badge?: CardBadge
+  /** Color variant, mapped to the standalone Badge component. */
+  style: "default" | "red" | "green";
+  /** Badge label. */
+  text: string;
 };
 
-export type Variant = "default" | "minimal";
-
+/** @deprecated Use `CardVariant` instead. */
+export type Variant = CardVariant;

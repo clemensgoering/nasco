@@ -1,59 +1,31 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es2016",
+    "target": "es2019",
     "module": "esnext",
     "jsx": "preserve",
-    "sourceMap": true,
-    "outDir": "dist",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "noEmit": false,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "noEmit": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
     "allowJs": true,
     "isolatedModules": true,
-    "noImplicitAny": true,
     "resolveJsonModule": true,
-    "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "downlevelIteration": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo"
   },
-  "include": [
-    "src",
-    "*.tsx",
-    "*.ts",
-    "*.css",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "coverage",
-    "config",
-    "dist",
-    "src/app",
-    "node_modules/**"
-  ]
+  "include": ["src", "*.ts", "*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
